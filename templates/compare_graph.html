@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <!-- add icon link -->
+    <link rel = "icon" href = "https://www.flaticon.com/svg/static/icons/svg/1170/1170667.svg" 
+    type = "image/x-icon"> 
+    <link rel="icon" type="static/image/png" href="static/img/favicon.png">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>
+      TechStack Landscape
+    </title>
+    <meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+   
+    <link href="static/css/material-dashboard.css?v=2.1.2" rel="stylesheet" />
+    <link href="static/demo/demo.css" rel="stylesheet" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
+    <!-- add icon link -->
+    <link rel = "icon" href = "https://www.flaticon.com/svg/static/icons/svg/1170/1170667.svg" 
+    type = "image/x-icon"> 
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js"></script>
+    
+    <style>
+      body 
+      {
+       background-color: #F5DBA8;
+      }
+      .topset{
+        position:relative;
+      }
+
+      .header 
+      {
+      overflow: hidden;
+      z-index: 9;
+      margin:30px;
+      background-color: #f1f1f1;
+      padding: 20px 10px;
+      }
+
+      .header a {
+      float: left;
+      color: black;
+      text-align: center;
+      padding: 12px;
+      text-decoration: none;
+      font-size: 18px; 
+      line-height: 25px;
+      border-radius: 4px;
+      }
+
+      .header a.logo {
+      font-size: 25px;
+      color: #2A1EA4;
+      font-weight: bold;
+      }
+
+      .header a:hover {
+      background-color: #E8F5F5;
+      color: #F57B82;
+      }
+
+      .header a.active {
+      background-color: dodgerblue;
+      color: white;
+      }
+
+      .header-right {
+      float: right;
+      }
+
+      .position-downward
+      {
+        margin: 150px 0px 50px 30px;
+        background-color: #f1f1f1;
+      }
+
+      .position-up{
+        margin: 0px 0px 0px 50px !important;
+        
+      }
+
+      .btn-info
+      {
+      left: 510px;
+      }
+    </style>
+  
+  </head>
+  <body class="">
+    <div class="wrapper ">
+
+      <div class="topset">
+        <div class="header">
+          <a href="/" class="logo">TECH STACK LANDSCAPING</a>
+          <div class="header-right">
+            <a class="active" href="#home">Home</a>
+            <a href="#contact">Contact</a>
+            <a href="#about">About</a>
+          </div>
+        </div>
+      <div class="sidebar position-downward" data-color="purple">
+        <!-- <div class="logo"><a href="" class="simple-text logo-normal">
+          Tech Stack
+          </a>
+        </div> -->
+        <div class="sidebar-wrapper">
+          <ul class="nav">
+            <li class="nav-item ">
+              <a class="nav-link" href="/dedicated-profile">
+                <i class="material-icons">person</i>
+                <p>Profile</p>
+              </a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="/">
+                <i class="material-icons">table_view</i>
+                <p>Table List</p>
+              </a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="initial-data">
+                <i class="material-icons">auto_graph</i>
+                <p>Graphs</p>
+              </a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="forecast-data">
+                <i class="material-icons">landscape</i>
+                <p>Forecast</p>
+              </a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href=" ">
+                <i class="material-icons">timeline</i>
+                <p>TimeSeries Data</p>
+              </a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="full-data">
+                <i class="material-icons">compare</i>
+                <p>Comparison</p>
+              </a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href=" ">
+                <i class="material-icons">logout</i>
+                <p>Log Out</p>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      </div>
+
+      <div class="main-panel">
+        <div class="container-fluid">
+          <div class = "row">
+              
+              <div class="col-md-11 py-2 position-up">
+                
+                  <!-- Card 1 -->
+                  <div class="card h-100">
+                  <!-- Card content -->
+                  <div class="card-header card-header-primary " style="background: #4568DC;background: -webkit-linear-gradient(to right, #B06AB3, #4568DC);background: linear-gradient(to right, #B06AB3, #4568DC);">
+                    <h4 class="card-title">Comparison Graph</h4><br>
+                    
+                  </div>
+                          
+                      <div class="card-body">
+                      <!-- Card image -->
+                      <div class="view overlay">
+                          <div class="chart" id="linegraph">
+                              <script>
+                              var graphs = {{plot1|safe}};
+                              Plotly.plot('linegraph',graphs,{});
+                              </script>
+                          </div>
+                      </div>
+                      </div>
+                      <div class="card-body">
+                      <!-- Card content -->
+                      </div>
+                  </div>
+                  <!-- Card 1-->
+              </div>
+          </div>
+          <!--Grid row-->
+          
+
+  </div>
+      </div>
+    </div>
+  </body>
+</html>
