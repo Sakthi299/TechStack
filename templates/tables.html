@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="apple-touch-icon" sizes="76x76" href="static/img/apple-icon.png">
+    <link rel="icon" type="image/png" href="static/img/favicon.png">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>
+      Material Dashboard by Creative Tim
+    </title>
+    <meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
+    <!--     Fonts and icons     -->
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+    <!-- CSS Files -->
+    <link href="static/css/material-dashboard.css?v=2.1.2" rel="stylesheet" />
+    <!-- CSS Just for demo purpose, don't include it in your project -->
+    <link href="static/demo/demo.css" rel="stylesheet" />
+  </head>
+  <body class="">
+    <div class="wrapper ">
+      <div class="sidebar" data-color="purple" data-background-color="white" data-image="img/sidebar-1.jpg">
+        <!--
+          Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
+          
+          Tip 2: you can also add an image using data-image tag
+          -->
+        <div class="logo"><a href="http://www.creative-tim.com" class="simple-text logo-normal">
+          Tech Stack
+          </a>
+        </div>
+        <div class="sidebar-wrapper">
+          <ul class="nav">
+            <li class="nav-item ">
+              <a class="nav-link" href="/">
+                <i class="material-icons">person</i>
+                <p>Profile</p>
+              </a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="/">
+                <i class="material-icons">table_view</i>
+                <p>Table List</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="initial-data">
+                <i class="material-icons">auto_graph</i>
+                <p>Graphs</p>
+              </a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="forecast-data">
+                <i class="material-icons">landscape</i>
+                <p>Forecast</p>
+              </a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href=" ">
+                <i class="material-icons">timeline</i>
+                <p>TimeSeries Data</p>
+              </a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="full-data">
+                <i class="material-icons">compare</i>
+                <p>Comparison</p>
+              </a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href=" ">
+                <i class="material-icons">logout</i>
+                <p>Log Out</p>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="main-panel">
+        <div class="content">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="card">
+                  <div class="card-header card-header-primary">
+                    <h4 class="card-title ">Frontend</h4>
+                    <p class="card-category"> Data Collection</p>
+                  </div>
+                  <div class="card-body">
+                    <div class="table-responsive">
+                      <table class="table">
+                        <thead class=" text-primary">
+                          <th>
+                            Month
+                          </th>
+                          <th>
+                            Reactjs
+                          </th>
+                         
+                        </thead>
+                        {% i = 2009 %}
+                        {% for row in rows_data %}
+                        {% if row['year'] == i  %}
+                       
+                       
+                        <tbody>
+                          <tr>
+                            <td>
+                              {{row['month']}}
+                            </td>
+                            <td>
+                              {{row['values']}}
+                            </td>
+                            
+                          </tr>
+                          
+                        </tbody>{% endif %} {% endfor %}  
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-12">
+                <div class="card card-plain">
+                  <div class="card-header card-header-primary">
+                    <h4 class="card-title mt-0"> Table on Plain Background</h4>
+                    <p class="card-category"> Here is a subtitle for this table</p>
+                  </div>
+                  <div class="card-body">
+                    <div class="table-responsive">
+                      <table class="table table-hover">
+                        <thead class="">
+                          <th>
+                            ID
+                          </th>
+                          <th>
+                            Name
+                          </th>
+                          <th>
+                            Country
+                          </th>
+                          <th>
+                            City
+                          </th>
+                          <th>
+                            Salary
+                          </th>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>
+                              1
+                            </td>
+                            <td>
+                              Dakota Rice
+                            </td>
+                            <td>
+                              Niger
+                            </td>
+                            <td>
+                              Oud-Turnhout
+                            </td>
+                            <td>
+                              $36,738
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              2
+                            </td>
+                            <td>
+                              Minerva Hooper
+                            </td>
+                            <td>
+                              Curaçao
+                            </td>
+                            <td>
+                              Sinaai-Waas
+                            </td>
+                            <td>
+                              $23,789
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              3
+                            </td>
+                            <td>
+                              Sage Rodriguez
+                            </td>
+                            <td>
+                              Netherlands
+                            </td>
+                            <td>
+                              Baileux
+                            </td>
+                            <td>
+                              $56,142
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              4
+                            </td>
+                            <td>
+                              Philip Chaney
+                            </td>
+                            <td>
+                              Korea, South
+                            </td>
+                            <td>
+                              Overland Park
+                            </td>
+                            <td>
+                              $38,735
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              5
+                            </td>
+                            <td>
+                              Doris Greene
+                            </td>
+                            <td>
+                              Malawi
+                            </td>
+                            <td>
+                              Feldkirchen in Kärnten
+                            </td>
+                            <td>
+                              $63,542
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              6
+                            </td>
+                            <td>
+                              Mason Porter
+                            </td>
+                            <td>
+                              Chile
+                            </td>
+                            <td>
+                              Gloucester
+                            </td>
+                            <td>
+                              $78,615
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
