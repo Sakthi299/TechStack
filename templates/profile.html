@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <!-- add icon link -->
+    <link rel = "icon" href = "https://www.flaticon.com/svg/static/icons/svg/1170/1170667.svg" 
+    type = "image/x-icon"> 
+    <link rel="icon" type="image/png" href="static/img/favicon.png">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>
+      TechStack Landscape
+    </title>
+    <meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+    <link href="static/css/material-dashboard.css?v=2.1.2" rel="stylesheet" />
+    <link href="static/demo/demo.css" rel="stylesheet" />
+    
+    <style>
+      
+      body 
+      {
+       background-color: #F5DBA8;
+      }
+
+      p.uppercase {
+        text-transform: uppercase;
+      }
+
+      .position-downward
+      {
+        margin: 150px 0px 50px 30px;
+        background-color: #f1f1f1;
+      }
+      
+      .position-up{
+        margin: -40px 0px 0px 50px !important;
+        
+      }
+
+      .bgcolor
+      {
+        background: #4568DC;  
+        background: -webkit-linear-gradient(to right, #B06AB3, #4568DC);  
+        background: linear-gradient(to right, #B06AB3, #4568DC); 
+      }
+
+      .topset{
+        position:relative;
+      }
+
+      .header 
+      {
+      overflow: hidden;
+      z-index: 9;
+      margin:30px;
+      background-color: #f1f1f1;
+      padding: 20px 10px;
+      }
+
+      .header a {
+      float: left;
+      color: black;
+      text-align: center;
+      padding: 12px;
+      text-decoration: none;
+      font-size: 18px; 
+      line-height: 25px;
+      border-radius: 4px;
+      }
+
+      .header a.logo {
+      font-size: 25px;
+      color: #2A1EA4;
+      font-weight: bold;
+      }
+
+      .header a:hover {
+      background-color: #E8F5F5;
+      color: #F57B82;
+      }
+
+      .header a.active {
+      background-color: dodgerblue;
+      color: white;
+      }
+
+      .header-right {
+      float: right;
+      }
+    </style>
+    
+  </head>
+  <body class="">
+    <div class="wrapper">
+
+      <div class="topset">
+        <div class="header">
+          <a href="/" class="logo">TECH STACK LANDSCAPING</a>
+          <div class="header-right">
+            <a class="active" href="#home">Home</a>
+            <a href="#contact">Contact</a>
+            <a href="#about">About</a>
+          </div>
+        </div>
+      <div class="sidebar position-downward" data-color="purple">
+        <!-- <div class="logo"><a href="" class="simple-text logo-normal">
+          Tech Stack
+          </a>
+        </div> -->
+        <div class="sidebar-wrapper">
+          <ul class="nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="/dedicated-profile">
+                <i class="material-icons">person</i>
+                <p>Profile</p>
+              </a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="/">
+                <i class="material-icons">table_view</i>
+                <p>Table List</p>
+              </a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="initial-data">
+                <i class="material-icons">auto_graph</i>
+                <p>Graphs</p>
+              </a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="forecast-data">
+                <i class="material-icons">landscape</i>
+                <p>Forecast</p>
+              </a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href=" ">
+                <i class="material-icons">timeline</i>
+                <p>TimeSeries Data</p>
+              </a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="full-data">
+                <i class="material-icons">compare</i>
+                <p>Comparison</p>
+              </a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href=" ">
+                <i class="material-icons">logout</i>
+                <p>Log Out</p>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>    
+    </div>
+
+      <div class="main-panel">
+        <div class="content">
+          <div class="container-fluid">
+            <div class="row">
+
+              <div class="col-md-7 position-up">
+                <div class="card">
+                  <div class="card-header card-header-primary" style="background: #4568DC;background: -webkit-linear-gradient(to right, #B06AB3, #4568DC);background: linear-gradient(to right, #B06AB3, #4568DC);">
+                    <h4 class="card-title font-weight-bold">PROFILE</h4>
+                    <p class="card-category font-weight-bold">Tech Profile</p>
+                  </div>
+                  {% for row in rows %}
+                    
+                  <div class="card-body" style="background-color: #ffffff;">
+                    <form>
+                      <div class="row">
+                        <div class="col-md-5">
+                          <div class="form-group">
+                            <label class="bmd-label-floating">Technology Name</label>
+                            <p> {{row.Technology}} </p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <label class="bmd-label-floating">Interface</label>
+                            <p> {{row.Interface}} </p>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <label class="bmd-label-floating">Source</label>
+                            <p> {{row.Source}} </p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-12">
+                          <div class="form-group">
+                            <label class="bmd-label-floating">Github Link</label>
+                            <p> {{row.git_repo_link}} </p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-4">
+                          <div class="form-group">
+                            <label class="bmd-label-floating">Commit</label>
+                            <p> {{row.git_commit_count}} </p>
+                          </div>
+                        </div>
+                        <div class="col-md-4">
+                          <div class="form-group">
+                            <label class="bmd-label-floating">Fork</label>
+                            <p> {{row.git_fork_count}} </p>
+                          </div>
+                        </div>
+                        <div class="col-md-4">
+                          <div class="form-group">
+                            <label class="bmd-label-floating">Star</label>
+                            <p> {{row.git_watcher_count}} </p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-4">
+                          <div class="form-group">
+                              <label class="bmd-label-floating">Written In</label>
+                              <p> {{row.writtenin}} </p>
+                            
+                          </div>
+                        </div>
+                      </div>
+                      <button type="submit" class="btn btn-primary pull-right" style="background: #4568DC;background: -webkit-linear-gradient(to right, #B06AB3, #4568DC);background: linear-gradient(to right, #B06AB3, #4568DC);">Update Profile</button>
+                      <div class="clearfix"></div>
+                    </form>
+                  </div> 
+                </div>
+              </div>
+
+              <div class="col-md-4 position-up">
+                <div class="card card-profile">
+                  <div class="card-avatar">
+                    <a href="javascript:;">
+                    <img class="img" src="{{row.Image_link}}" />
+                    </a>
+                  </div>
+                  <div class="card-body">
+                    <h6 class="card-category text-gray"><p class="capitalize">{{row.Interface}}</p></h6>
+                    <h4 class="card-title">{{row.Technology}}</h4>
+                    <p class="card-description">{{row.About}}
+                    </p>
+                    <a href="{{row.git_repo_link}}" class="btn btn-primary btn-round font-weight-bold" style="background: #4568DC;background: -webkit-linear-gradient(to right, #B06AB3, #4568DC);background: linear-gradient(to right, #B06AB3, #4568DC);">Follow</a>{% endfor %}  
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
