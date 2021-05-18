@@ -2,17 +2,10 @@
 # Import necessary modules
 import os
 from decouple import config
-import logging
-import requests
-from bson.objectid import ObjectId
-import pprint
 from flask_pymongo import PyMongo
-from flask import Flask, jsonify, request, make_response, render_template, session, json, redirect, url_for
+from flask import Flask, request, render_template, json, redirect, url_for
 import numpy as np
 import pandas as pd
-from numpy import sqrt,log
-from pandas import Series
-from statsmodels.tsa.stattools import adfuller
 import plotly
 import plotly.graph_objects as go
 import matplotlib.pyplot as plt
@@ -357,84 +350,4 @@ def compare_future_variable(v):
 if __name__ == "__main__":
 
     global domain, name
-    app.run(debug=True)
-
-    
-'''
-@app.route("/api/get/all/libraries", methods = ['GET'])
-def get_all_libraries_api():
-
-    libraries = lib.find({})
-
-    lib_list  = []
-    for item in libraries:
-        library_obj = {
-            "library" : item['library_name'],
-            "logo"    : item['logo']
-        }
-        lib_list.append(library_obj)
-
-    result_dict = {
-        "libraries" : lib_list
-    }
-
-    return result_dict
-
-@app.route("/api/get/library/<id>", methods=['GET'])
-def get_specific_library_api(id):
-
-    # parent        = request.json['parent_library']
-    # library_no    = request.json['number']
-    
-    library = lib.find_one({
-        "_id" : ObjectId(id)
-    })
-
-    library_obj = {
-        "library"     : library['library_name'],
-        "github_link" : library['github_link'],
-        "description" : library['description'],
-        "id"          : str(library["_id"]),
-        "logo"        : library['logo']
-    }
-
-    return library_obj
-
-@app.route('/api/add/library', methods =['POST'])
-def add_new_library_api():
-    
-    # request.json 
-    # {
-    #   "parent_library" : "Pytorch",
-    #   "library_name"   : "edho",
-    #   "github_link"    : "some_link",
-    #   "logo"           : "some link",
-    #   "description"    : "some text"
-    # }
-
-
-    request_json = request.json
-
-    inserted_id = lib.insert_one(request_json).inserted_id
-    inserted_id = str(inserted_id)
-    
-    if(inserted_id == ''):
-        result_dict = {
-            "msg": 'Some error has occured!'
-        }
-        return result_dict
-
-    result_dict = {
-        "msg": 'inserted successfully',
-        "id" : inserted_id
-    }
-
-    return result_dict
-
-@app.route('/api/test')
-def test_api():
-    response = get_all_libraries_wrt_parent_api()
-    result   = response['result']
-    return render_template('pinterest.html', result =  result)
-'''
-
+    app.run('127.0.0.1', 5000, True)
