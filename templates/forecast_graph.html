@@ -10,6 +10,7 @@
     <title>
       TechStack Landscape
     </title>
+    
     <meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
@@ -127,7 +128,7 @@
               </a>
             </li>
             <li class="nav-item ">
-              <a class="nav-link" href="/">
+              <a class="nav-link" href="/table-data">
                 <i class="material-icons">table_view</i>
                 <p>Table List</p>
               </a>
@@ -176,25 +177,20 @@
                   <!-- Card 1 -->
                   <div class="card h-100">
                   <!-- Card content -->
-                  <div class="card-header card-header-primary" style="background: #4568DC;background: -webkit-linear-gradient(to right, #B06AB3, #4568DC);background: linear-gradient(to right, #B06AB3, #4568DC);">
-                    <div class="btn-group">
-                      
-                   
-                    <h4 class="card-title">Forecast Data</h4><br>
+                    <div class="card-header card-header-primary" style="background: #4568DC;background: -webkit-linear-gradient(to right, #B06AB3, #4568DC);background: linear-gradient(to right, #B06AB3, #4568DC);">
+                      <div class="btn-group">
+                      <h4 class="card-title">Forecast Data</h4><br>
                     
                   
                     <button type="button" class="btn btn-info font-weight-bold" style="background-color:#F0DF9D; color:#000">Compare</button>
                       <button type="button" class="btn btn-info dropdown-toggle dropdown-toggle-split" style="background-color:#E9B81C;color:#000" data-toggle="dropdown">
                       </button>
-                      <div class="dropdown-menu" style="background-color:#F0DF9D; color:#000">
-                        {% for row in v %}
-                        <a class="dropdown-item" href="compare-future-variable/{{row['Technology']}}" >{{row['Technology']}}</a>
-                        {% endfor %}  
-                          
-                         </div>
-                        
-                  
-                  </div>
+                        <div class="dropdown-menu" style="background-color:#F0DF9D; color:#000">
+                          {% for row in v %}
+                          <a class="dropdown-item" href="compare-future-variable/{{row['Technology']}}" >{{row['Technology']}}</a>
+                          {% endfor %}   
+                        </div>
+                      </div>
                   </div>
                           
                       <div class="card-body">

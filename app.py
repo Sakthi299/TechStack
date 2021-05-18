@@ -14,22 +14,23 @@ import matplotlib.pyplot as plt
 
 app = Flask(__name__)
 
-app.config["MONGO_URI"] = config('MONGO_URI_LANDSCAPE')
-
+app.config["MONGO_URI"] = "mongodb+srv://naveen:1234@cluster0.cymef.mongodb.net/git?retryWrites=true&w=majority"
 mongo = PyMongo(app)
+
 lib   = mongo.db.dev_library
 book  = mongo.db['library'] 
-library = mongo.db['table']
+library = mongo.db['new']
 
 df=pd.read_csv('month.csv')
 
 one_plot = ""
 compare_variable=""
+year_one = "2015"
 
 # Main route
 
-@app.route('/')
-def read_root():
+@app.route('/', methods=['GET'])
+def index():
 
     response = get_all_libraries_wrt_parent_api()
     result   = response['result']
@@ -150,24 +151,47 @@ def get_tech_profile():
 
 @app.route("/table-data" , methods = ["POST","GET"])
 def table_data():
-    table_variable      = "jquery"
-    contacts = library.find({"technology":table_variable})
+
+    global year_one, name, domain
+    print(year_one)
+
+    contacts_year = library.distinct('year')
+
+    year_list = []
+    year_obj = {}
+    
+    for item in contacts_year :
+        year_obj = {
+        'year' : item 
+        }
+        year_list.append(year_obj)
+    
+    f_year = year_one
+
+    if request.method == "POST":
+   
+        f_year = request.form["Year"]
+
+    table_variable      = name.lower()
+    domain_name         = domain
+
+    contacts = library.find({ 'year' : f_year })
     contact_list = []
     contact_obj = {}
 
     for item in contacts:
-        
+        # u_confirmed = item['values']
         contact_obj = {
-            "technology"  : item['technology'],  
+              
             "year"        : item['year'],  
             "month"       : item['month'],
-            "values"      : item['values']
+            "values"      : item[table_variable]
             
         }
 
         contact_list.append(contact_obj)
-    
-    return render_template('tables.html', rows_data = contact_list)
+        
+    return render_template('tables.html', rows_data = contact_list ,tech = table_variable, column = year_list , domain = domain_name)
 
 # Past dataset { till 2017 }
 
@@ -346,6 +370,14 @@ def compare_future_variable(v):
     global compare_variable
     compare_variable = v
     return redirect(url_for("compare_data_future"))
+
+@app.route("/vary-year/<v>",methods=["POST","GET"])
+def vary_year(v):
+
+    global year_one
+    year_one = v
+    return redirect(url_for("table_data"))
+
 
 if __name__ == "__main__":
 
