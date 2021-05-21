@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="utf-8" />
+    <!-- add icon link -->
+    <link rel = "icon" href = "https://www.flaticon.com/svg/static/icons/svg/1170/1170667.svg" 
+    type = "image/x-icon"> 
+    <link rel="icon" type="static/image/png" href="static/img/favicon.png">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>
+      TechStack Landscape
+    </title>
+
+    <meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+   
+    <link href="static/css/material-dashboard.css?v=2.1.2" rel="stylesheet" />
+    <link href="static/demo/demo.css" rel="stylesheet" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
+    <!-- add icon link -->
+    <link rel = "icon" href = "https://www.flaticon.com/svg/static/icons/svg/1170/1170667.svg" 
+    type = "image/x-icon"> 
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js"></script>
+
+    <style>
+      body 
+      {
+       background-color: #F5DBA8;
+      }
+      .topset{
+        position:relative;
+      }
+
+      .header 
+      {
+      overflow: hidden;
+      z-index: 9;
+      margin:30px;
+      background-color: #f1f1f1;
+      padding: 20px 10px;
+      }
+
+      .header a {
+      float: left;
+      color: black;
+      text-align: center;
+      padding: 12px;
+      text-decoration: none;
+      font-size: 18px; 
+      line-height: 25px;
+      border-radius: 4px;
+      }
+
+      .header a.logo {
+      font-size: 25px;
+      color: #2A1EA4;
+      font-weight: bold;
+      }
+
+      .header a:hover {
+      background-color: #E8F5F5;
+      color: #F57B82;
+      }
+
+      .header a.active {
+      background-color: dodgerblue;
+      color: white;
+      }
+
+      .header-right {
+      float: right;
+      }
+
+      .position-downward
+      {
+        margin: 150px 0px 50px 30px;
+        background-color: #f1f1f1;
+      }
+      .position-up{
+        margin: 0px 0px 0px 80px !important;
+        
+      }
+      .dropdown-item:hover
+      {
+        font-weight: bold;
+        background: #4568DC;
+        background: -webkit-linear-gradient(to right, #B06AB3, #4568DC);
+        background: linear-gradient(to right, #B06AB3, #4568DC);
+      }
+      .btn-info
+      {
+      left: 20px;
+      }
+
+      .px-4 {
+      padding-left: 100px !important;
+      padding-right: 10px !important;
+      }
+      .px-5 {
+      padding-left: 120px !important;
+      padding-right: 10px !important;
+      }
+
+      .text-large{
+        font-size: 120%;
+      }
+
+      .alert {
+        padding: 20px;
+        background-color: #f44336;
+        color: white;
+        opacity: 1;
+        transition: opacity 0.6s;
+        margin-bottom: 15px;
+    }
+
+    .alert.success {background-color: #04AA6D;}
+
+    .button {
+    border-radius: 4px;
+    background-color: #f4511e;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 28px;
+    padding: 20px;
+    width: 200px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+    }
+
+    .button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+    }
+
+    .button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+    }
+
+    .button:hover span {
+    padding-right: 25px;
+    }
+
+    .button:hover span:after {
+    opacity: 1;
+    right: 0;
+    }
+
+    </style>
+
+  </head>
+
+  <body class="">
+    <div class="wrapper ">
+
+      <div class="topset">
+        <div class="header">
+          <a href="/" class="logo">TECH STACK LANDSCAPING</a>
+          <div class="header-right">
+            <a href="#home">Home</a>
+            <a class="active" href="/getcontactform">Contact</a>
+            <a href="#about">About</a>
+          </div>
+        </div>
+
+      <div class="sidebar position-downward" data-color="purple">
+        <div class="sidebar-wrapper">
+          <ul class="nav">
+            <li class="nav-item ">
+              <a class="nav-link" href="/dedicated-profile">
+                <i class="material-icons">person</i>
+                <p>Profile</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/table-data">
+                <i class="material-icons">table_view</i>
+                <p>Table List</p>
+              </a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="initial-data">
+                <i class="material-icons">auto_graph</i>
+                <p>Graphs</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="forecast-data">
+                <i class="material-icons">landscape</i>
+                <p>Forecast</p>
+              </a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href=" ">
+                <i class="material-icons">timeline</i>
+                <p>TimeSeries Data</p>
+              </a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="full-data">
+                <i class="material-icons">compare</i>
+                <p>Comparison</p>
+              </a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href=" ">
+                <i class="material-icons">logout</i>
+                <p>Log Out</p>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      </div>
+
+      <div class="main-panel">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-md-8 py-3 px-5 position-up">
+
+                <div class="card h-70">
+                  <!-- Card content -->
+                  <div class="card-header card-header-primary" style="background: #4568DC;background: -webkit-linear-gradient(to right, #B06AB3, #4568DC);background: linear-gradient(to right, #B06AB3, #4568DC);">
+                    <h4 class="card-title ">Contact Us</h4>
+                  </div>
+                  
+                  <div class="card-body">
+                     <h1 class="text-uppercase text-center">Reach Us :) Voice out your query !!!</h1>
+                    <hr>
+                    <p class="text-center">Feel free to share your thought. It only takes 2 minutes.</p>
+                    {% if msg %}
+                    <div class="alert success">
+                        <span style="color:#f1f1f1;font-weight: bolder;"><strong>Success!</strong> {{msg}}  </span> <br>
+                        <form action="/">
+                        <button class="button" type="submit"><span>Home </span></button>
+                        </form>
+                    </div>
+                    {% else %}
+                    <form action="contactform" method="POST">
+                        <div class="form-group">
+                        <input id="email" type="email" name="email" class="form-control mt-3 py-3 mx-5" placeholder="Email" required style="width:80%;height:10%;color:#B06AB3;font-weight: bolder;">
+                        <input id="tech" type="text" name="tech" class="form-control mt-3 py-3 mx-5" placeholder="Technology Name" required style="width:80%;height:10%;color:#B06AB3;font-weight: bolder;">
+                        <input id="note" type="text" name="note" class="form-control mt-3 py-5 mx-5" placeholder="Feedback" required style="width:80%;height:10%;color:#B06AB3;font-weight: bolder;">
+                        </div>
+                        <button class="btn btn-success btn-block text-uppercase">Submit Query</button>
+                        <div class="invalid-feedback">Something went wrong.</div>
+                    </form>
+                    {% endif %}
+                  
+                </div>
+                </div><!--Card end-->
+              </div><!--col group-->
+              <div class="col-md-4">
+
+              </div>
+            </div><!--row group-->
+
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
