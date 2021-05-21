@@ -14,12 +14,13 @@ import matplotlib.pyplot as plt
 
 app = Flask(__name__)
 
-app.config["MONGO_URI"] = "mongodb+srv://naveen:1234@cluster0.cymef.mongodb.net/git?retryWrites=true&w=majority"
+app.config["MONGO_URI"] = config('MONGO_URI_LANDSCAPE')
 mongo = PyMongo(app)
 
 lib   = mongo.db.dev_library
 book  = mongo.db['library'] 
 library = mongo.db['new']
+feed = mongo.db['feedback']
 
 df=pd.read_csv('month.csv')
 
@@ -115,6 +116,42 @@ def get_profile():
     print(name)
     return redirect(url_for("get_tech_profile"))
 
+# Redirect to Contact form
+
+@app.route("/getcontactform",methods=["POST","GET"])
+def getcontactform():
+
+    message = ""
+
+    return render_template("contact.html",msg = message)
+
+# Contact Form
+
+@app.route("/contactform",methods=["POST","GET"])
+def contactform():
+
+    doc = ""
+    message = ""
+
+    tech   = request.form['tech']
+    mail  = request.form['email']
+    note   = request.form['note'] 
+
+    suggestion = {
+        "email": mail,
+        "technology": tech,
+        "suggestion": note
+    }
+
+    doc = feed.insert_one(suggestion)
+
+    if doc :
+        message = "Your Response was submitted successfully. We will reach you within 1 week."
+        print(message)
+    
+    return render_template("contact.html",msg = message)
+
+
 @app.route("/dedicated-profile",methods = ['POST','GET'])
 def get_tech_profile():
 
@@ -206,7 +243,7 @@ def initial_data():
     
     fig = go.Figure()
     fig.add_trace(go.Scatter(x = x_value, y = y_value,
-                        mode = 'lines',
+                        mode = 'lines+markers',
                         name = 'lines'))
     fig.update_xaxes(type = 'category')
     fig.update_xaxes(title_text = 'month')
@@ -235,10 +272,11 @@ def initial_data():
 @app.route("/forecast-data" , methods = ["POST","GET"])
 def forecast_data():
 
+    global domain
     Interface_variable      = domain
     forecast_graph_variable = name.lower()
     forecast_variable       = forecast_graph_variable + '_forecast'
-    print(forecast_variable)
+    print(domain)
 
     x_value =   df['month']
     y_past  =   df[forecast_variable][:108]
@@ -247,11 +285,11 @@ def forecast_data():
 
     fig = go.Figure()
     fig.add_trace(go.Scatter(x = x_value, y= y_past,
-                    mode='lines',
+                    mode='lines+markers',
                     line=dict(color="#0000ff"),
                     name='past data'))
     fig.add_trace(go.Scatter(x = x_value[108:168], y = y_value,
-                    mode='lines',
+                    mode='lines+markers',
                     line=dict(color="#ff0000"),
                     name='forecast data'))
     fig.update_xaxes(type = 'category')
