@@ -19,5 +19,18 @@
 
 ## Executed ScreenShots :camera:
 
+### Landing Page of Application
+![Landing Page](https://github.com/Sakthi299/TechStack/blob/main/snapshots/homepage.png?raw=true)
 
 
+![Landing Page](https://github.com/Sakthi299/TechStack/blob/main/snapshots/sqlite.png?raw=true)
+### Profile Page of Tech Stack
+![Landing Page](https://github.com/Sakthi299/TechStack/blob/main/snapshots/jquery1.png?raw=true)
+### Tags Count of Domain
+![Landing Page](https://github.com/Sakthi299/TechStack/blob/main/snapshots/jquery2.png?raw=true)
+### Analysis of Tags Data
+![Landing Page](https://github.com/Sakthi299/TechStack/blob/main/snapshots/jquery3.png?raw=true)
+### Forecast of TechStack
+![Landing Page](https://github.com/Sakthi299/TechStack/blob/main/snapshots/jquery5.png?raw=true)
+### Cumulative Forecasting of Discrete Domains
+![Landing Page](https://github.com/Sakthi299/TechStack/blob/main/snapshots/jquery6.png?raw=true)
