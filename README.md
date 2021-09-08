@@ -34,3 +34,7 @@
 ![Landing Page](https://github.com/Sakthi299/TechStack/blob/main/snapshots/jquery5.png?raw=true)
 ### Cumulative Forecasting of Discrete Domains
 ![Landing Page](https://github.com/Sakthi299/TechStack/blob/main/snapshots/jquery6.png?raw=true)
+
+#### Thanks! :heart:
+
+Made with :heart: and Python.
