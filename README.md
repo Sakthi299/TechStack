@@ -3,7 +3,7 @@
 ##### Technology Landscaping and Forecasting
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-:star: Star us on GitHub — It motivates to develop more!
+:star: Star me on GitHub — It motivates to develop more ! 🙂
 
 ## Problem Statement
 ![](https://img.shields.io/badge/-Channelize_your_productivity_in_right_track-blue?style=for-the-badge)
